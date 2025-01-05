@@ -38,7 +38,7 @@ const Page = () => {
       
 
         try{
-            const response = await axios.post("http://localhost:5000/add_name",details)
+            const response = await axios.post("https://next-1-backend-1.vercel.app/add_name",details)
             console.log(response)
             
         }catch(e){
@@ -60,7 +60,7 @@ const Page = () => {
 
         try{
             
-            const response = await axios.post("http://localhost:5000/searchTable",searchTime)
+            const response = await axios.post("https://next-1-backend-1.vercel.app/searchTable",searchTime)
             console.log(response , "<=== search response")
             const result_list = []
             
@@ -76,7 +76,7 @@ const Page = () => {
         const getTables = async() => {
              
             try{
-                const response = await axios.get("http://localhost:5000/get_tables");
+                const response = await axios.get("https://next-1-backend-1.vercel.app/get_tables");
                 console.log(response)
                 setData(response.data)
     

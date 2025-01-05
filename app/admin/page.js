@@ -35,7 +35,7 @@ const Page = () => {
      const sendData = async() => {
          
         try{
-            const response = await axios.post("http://localhost:5000/reservation_create",{...values,admin:adminId})
+            const response = await axios.post("https://next-1-backend-1.vercel.app/reservation_create",{...values,admin:adminId})
             console.log(response)
             
         }catch(e){
@@ -50,7 +50,7 @@ const Page = () => {
      const registerAdmin = async() => {
        
         try{ 
-           const response = await axios.post("http://localhost:5000/registerAdmin",admin)
+           const response = await axios.post("https://next-1-backend-1.vercel.app/registerAdmin",admin)
            console.log(response)
            if(response.statusText === 'OK'){
              setDetailsModal(false)
@@ -69,7 +69,7 @@ const Page = () => {
      const loginAdmin = async() =>{ 
 
         try{
-          const response = await axios.post("http://localhost:5000/loginAdmin",admin)
+          const response = await axios.post("https://next-1-backend-1.vercel.app/loginAdmin",admin)
           console.log(response)
           if(response.data.length>0){
             setAdminId(response.data[0]._id)
@@ -85,7 +85,7 @@ const Page = () => {
 
          const getTables = async() => {
              
-          const response = await axios.post("http://localhost:5000/getAdminTables",{id:adminId})
+          const response = await axios.post("https://next-1-backend-1.vercel.app/getAdminTables",{id:adminId})
           if(response.statusText === 'OK'){
              
             setTableList(response.data)
